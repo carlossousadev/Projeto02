@@ -1,0 +1,9 @@
+{
+    "java.compile.nullAnalysis.mode": "automatic",
+    "java.project.sourcePaths": [
+        "flow-crm-tutorial-24/Prime_Soft/src/main/java/com/example/application",
+        "Projeto02/src",
+        "Prime_Soft/Prime_Soft/src/main/java/com/example/application",
+        "flow-crm-tutorial-24/flow-crm-tutorial-24/src/main/java/com/example/application"
+    ]
+}
