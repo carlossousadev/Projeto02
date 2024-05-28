@@ -3,6 +3,7 @@ package com.example.application.views.list;
 import com.example.application.data.Company;
 import com.example.application.data.Contact;
 import com.example.application.data.Status;
+import com.example.application.views.list.ContactForm.CloseEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -14,11 +15,15 @@ import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
+import com.vaadin.flow.component.textfield.TextArea;
 import com.vaadin.flow.component.textfield.TextField;
+import com.vaadin.flow.component.upload.Upload;
+import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class ContactForm extends FormLayout {
@@ -30,6 +35,12 @@ public class ContactForm extends FormLayout {
   ComboBox<Status> status = new ComboBox<>("Status");
 
   DatePicker datePicker = new DatePicker("Start date");
+
+  TextArea textArea = new TextArea();
+
+  MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
+  Upload upload = new Upload(buffer);
+  
 
   Button save = new Button("Save");
   Button delete = new Button("Delete");
@@ -52,6 +63,8 @@ public class ContactForm extends FormLayout {
         company,
         status,
         datePicker,
+        textArea, 
+        upload,
         createButtonsLayout());
   }
 
