@@ -10,6 +10,7 @@ import com.vaadin.flow.component.Key;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
+import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
@@ -27,6 +28,8 @@ public class ContactForm extends FormLayout {
   EmailField email = new EmailField("Email");
   ComboBox<Company> company = new ComboBox<>("Cliente");
   ComboBox<Status> status = new ComboBox<>("Status");
+
+  DatePicker datePicker = new DatePicker("Start date");
 
   Button save = new Button("Save");
   Button delete = new Button("Delete");
@@ -48,6 +51,7 @@ public class ContactForm extends FormLayout {
         email,
         company,
         status,
+        datePicker,
         createButtonsLayout());
   }
 
