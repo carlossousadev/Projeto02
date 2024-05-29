@@ -1,6 +1,9 @@
 package com.example.application.data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.vaadin.flow.component.datepicker.DatePicker;
+import com.vaadin.flow.component.textfield.TextArea;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -75,4 +78,5 @@ public class Contact extends AbstractEntity {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

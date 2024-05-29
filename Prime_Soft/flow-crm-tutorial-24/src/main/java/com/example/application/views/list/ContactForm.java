@@ -13,6 +13,8 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
+import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
 import com.vaadin.flow.component.textfield.TextArea;
@@ -22,6 +24,8 @@ import com.vaadin.flow.component.upload.receivers.MultiFileMemoryBuffer;
 import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
+
+import aj.org.objectweb.asm.Label;
 
 import java.io.InputStream;
 import java.util.List;
@@ -34,13 +38,14 @@ public class ContactForm extends FormLayout {
   ComboBox<Company> company = new ComboBox<>("Cliente");
   ComboBox<Status> status = new ComboBox<>("Status");
 
-  DatePicker datePicker = new DatePicker("Start date");
+  DatePicker datePicker = new DatePicker("Data");
 
-  TextArea textArea = new TextArea();
+  TextArea textArea = new TextArea("Texto");
+
+  NativeLabel title = new NativeLabel("Upload");
 
   MultiFileMemoryBuffer buffer = new MultiFileMemoryBuffer();
   Upload upload = new Upload(buffer);
-  
 
   Button save = new Button("Save");
   Button delete = new Button("Delete");
@@ -64,6 +69,7 @@ public class ContactForm extends FormLayout {
         status,
         datePicker,
         textArea, 
+        title,
         upload,
         createButtonsLayout());
   }

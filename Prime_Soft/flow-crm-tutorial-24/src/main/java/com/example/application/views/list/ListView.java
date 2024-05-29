@@ -53,7 +53,7 @@ public class ListView extends VerticalLayout {
 
     private void configureForm() {
         form = new ContactForm(service.findAllCompanies(), service.findAllStatuses());
-        form.setWidth("25em");
+        form.setWidth("35em");
         form.addSaveListener(this::saveContact); // <1>
         form.addDeleteListener(this::deleteContact); // <2>
         form.addCloseListener(e -> closeEditor()); // <3>
