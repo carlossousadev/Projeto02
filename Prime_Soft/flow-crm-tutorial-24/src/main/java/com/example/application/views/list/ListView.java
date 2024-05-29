@@ -15,8 +15,6 @@ import com.vaadin.flow.router.Route;
 import com.vaadin.flow.spring.annotation.SpringComponent;
 import jakarta.annotation.security.PermitAll;
 
-import java.util.Collections;
-
 import org.springframework.context.annotation.Scope;
 
 @SpringComponent
@@ -53,7 +51,7 @@ public class ListView extends VerticalLayout {
 
     private void configureForm() {
         form = new ContactForm(service.findAllCompanies(), service.findAllStatuses());
-        form.setWidth("35em");
+        form.setWidth("72em");
         form.addSaveListener(this::saveContact); // <1>
         form.addDeleteListener(this::deleteContact); // <2>
         form.addCloseListener(e -> closeEditor()); // <3>

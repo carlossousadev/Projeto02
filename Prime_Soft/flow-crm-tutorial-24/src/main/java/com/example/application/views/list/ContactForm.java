@@ -3,7 +3,6 @@ package com.example.application.views.list;
 import com.example.application.data.Company;
 import com.example.application.data.Contact;
 import com.example.application.data.Status;
-import com.example.application.views.list.ContactForm.CloseEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
@@ -13,7 +12,6 @@ import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.formlayout.FormLayout;
-import com.vaadin.flow.component.html.H4;
 import com.vaadin.flow.component.html.NativeLabel;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.textfield.EmailField;
@@ -25,9 +23,6 @@ import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
 
-import aj.org.objectweb.asm.Label;
-
-import java.io.InputStream;
 import java.util.List;
 
 public class ContactForm extends FormLayout {
@@ -68,8 +63,7 @@ public class ContactForm extends FormLayout {
         company,
         status,
         datePicker,
-        textArea, 
-        title,
+        textArea,
         upload,
         createButtonsLayout());
   }
