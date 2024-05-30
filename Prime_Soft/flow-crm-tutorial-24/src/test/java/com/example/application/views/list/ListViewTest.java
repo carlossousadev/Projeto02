@@ -35,6 +35,7 @@ public class ListViewTest {
         assertEquals(firstContact.getFirstName(), form.firstName.getValue());
     }
 
+    @SuppressWarnings("unchecked")
     private Contact getFirstItem(Grid<Contact> grid) {
         return( (ListDataProvider<Contact>) grid.getDataProvider()).getItems().iterator().next();
     }
